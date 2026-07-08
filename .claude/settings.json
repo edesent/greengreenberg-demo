@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36\" https://greengreenberg.com/ -o gg_home.html)",
+      "Bash(grep -oE '5 Decades[^<]*|We focus exclusively[^<]*|Social Security Disability[^<]{0,60}' gg_home.html)",
+      "Bash(grep -oE '<h[1-3][^>]*>[^<]{3,120}' gg_home.html)",
+      "Bash(mv public/images ./images)",
+      "Bash(rmdir public *)",
+      "Bash(git init *)",
+      "Bash(git -c user.name=edesent -c user.email=edesent@glpg.net commit -q -m 'Green & Greenberg homepage demo — clearly-sectioned static site *)"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+# dependencies (none needed — pure static site)
+node_modules/
+
+# vercel
+.vercel
+
+# os / editor
+.DS_Store
+Thumbs.db
+*.log

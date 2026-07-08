@@ -1,0 +1,393 @@
+<!--
+  ============================================================================
+  GREEN & GREENBERG — HOMEPAGE (demo rebuild)
+  ----------------------------------------------------------------------------
+  This file is organized into clearly-labeled SECTION blocks so each piece of
+  the page is easy to find and edit. Search for "SECTION:" to jump around.
+
+    1.  TOP BAR          – phone / hours utility strip
+    2.  HEADER / NAV     – logo + navigation
+    3.  HERO SLIDER      – rotating 3-slide banner
+    4.  STATS STRIP      – trust badges
+    5.  INTRO            – who we are
+    6.  WHY US           – advantage cards
+    7.  PROCESS          – 4-step how it works
+    8.  PROFILE SECTION  – attorney team cards  (full bios on profile.html)
+    9.  TIMELINE         – firm history
+    10. TESTIMONIALS     – client quotes
+    11. CTA BANNER       – free case review
+    12. CONTACT          – offices + form
+    13. FOOTER
+  ============================================================================
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green &amp; Greenberg — Social Security Disability Attorneys | RI &amp; MA</title>
+<meta name="description" content="For over three decades, Green & Greenberg has focused exclusively on Social Security Disability (SSDI) and SSI claims across Rhode Island and Massachusetts.">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+
+<!-- ========================================================================
+     SECTION 1 · TOP BAR
+     ======================================================================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left">
+      <span>📞 Local: <a href="tel:14013318989">(401) 331-8989</a></span>
+      <span>☎️ Toll-Free: <a href="tel:18443318989">(844) 331-8989</a></span>
+      <span class="hide-sm">🕘 Mon–Fri · 8:30am – 5:00pm</span>
+    </div>
+    <div class="tb-right">
+      <span class="dot">●</span> Serving Rhode Island &amp; Massachusetts
+    </div>
+  </div>
+</div>
+
+
+<!-- ========================================================================
+     SECTION 2 · HEADER / NAVIGATION
+     ======================================================================== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Green & Greenberg home">
+      <img src="images/logo.png" alt="Green & Greenberg">
+    </a>
+
+    <nav class="nav" id="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">Our Process</a>
+      <a href="profile.html">Attorneys</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn-gold" href="#contact">Free Case Review</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ========================================================================
+     SECTION 3 · HERO SLIDER  (3 rotating slides — controlled by script.js)
+     ======================================================================== -->
+<section class="hero" aria-label="Featured">
+  <div class="slides" id="slides">
+
+    <!-- SLIDE 1 -->
+    <article class="slide is-active" style="--slide-img: url('images/hero.jpg')">
+      <div class="wrap">
+        <div class="hero-inner">
+          <p class="eyebrow">5 Decades of Experience</p>
+          <h1>Social Security Disability is all we do.</h1>
+          <p>We focus exclusively on SSDI and SSI claims — from your first application through federal court appeals — for clients across Rhode Island and Massachusetts.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Get a Free Case Review</a>
+            <a class="btn btn-ghost" href="#process">See How It Works</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 2 -->
+    <article class="slide" style="--slide-img: url('images/hero.jpg')">
+      <div class="wrap">
+        <div class="hero-inner">
+          <p class="eyebrow">Denied? You Have Options.</p>
+          <h1>A denial is not the end of your claim.</h1>
+          <p>Most disability claims are turned down at first. Our attorneys know how to build the record, meet the deadlines, and win at the hearing level.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Appeal Your Denial</a>
+            <a class="btn btn-ghost" href="#why">Why Choose Us</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 3 -->
+    <article class="slide" style="--slide-img: url('images/hero.jpg')">
+      <div class="wrap">
+        <div class="hero-inner">
+          <p class="eyebrow">No Fee Unless You Win</p>
+          <h1>Local attorneys the judges already know.</h1>
+          <p>You pay nothing up front. Our fee comes only from past-due benefits we recover for you — capped and approved under federal rules.</p>
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#contact">Talk to an Attorney</a>
+            <a class="btn btn-ghost" href="profile.html">Meet the Team</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- slider controls -->
+  <button class="hero-arrow prev" id="heroPrev" aria-label="Previous slide">‹</button>
+  <button class="hero-arrow next" id="heroNext" aria-label="Next slide">›</button>
+  <div class="hero-dots" id="heroDots" role="tablist" aria-label="Slides"></div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 4 · STATS STRIP
+     ======================================================================== -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="num">35+</div><div class="lab">Years of Practice</div></div>
+    <div class="stat"><div class="num">1991</div><div class="lab">Firm Established</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lab">Disability Law Focus</div></div>
+    <div class="stat"><div class="num">2</div><div class="lab">States Served: RI &amp; MA</div></div>
+  </div>
+</div>
+
+
+<!-- ========================================================================
+     SECTION 5 · INTRO
+     ======================================================================== -->
+<section class="intro">
+  <div class="wrap grid">
+    <div class="text reveal">
+      <p class="eyebrow">Who We Are</p>
+      <h2 class="section-title">The Northeast's dedicated Social&nbsp;Security Disability firm.</h2>
+      <p class="lede">Founded in 1991 by David Green and Moe Greenberg, we were among the first firms in the region to devote our entire practice to Social Security Disability law — and it is still all we do today.</p>
+      <p>That single focus means every attorney and staff member on your case lives and breathes SSDI and SSI. We know the local judges, the medical experts, and exactly what the Social Security Administration needs to approve a claim.</p>
+      <a class="btn btn-teal" href="profile.html">Meet Our Attorneys →</a>
+    </div>
+    <div class="media reveal">
+      <img src="images/hero.jpg" alt="Green & Greenberg disability attorneys">
+      <div class="badge"><b>35</b><span>Years Serving<br>RI &amp; MA</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 6 · WHY US  (advantage cards)
+     ======================================================================== -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Why Choose a Local Firm</p>
+      <h2 class="section-title">Five reasons clients trust Green&nbsp;&amp;&nbsp;Greenberg.</h2>
+      <p class="lede">Big out-of-state call centers can't offer what a dedicated local firm does.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal"><div class="ico">📍</div><h3>Right Here at Home</h3><p>Offices in Rhode Island and Massachusetts — real attorneys you can meet, not a 1-800 intake line three states away.</p></div>
+      <div class="card reveal"><div class="ico">⚖️</div><h3>One Focus Only</h3><p>We handle Social Security Disability claims and nothing else. That concentration is your advantage.</p></div>
+      <div class="card reveal"><div class="ico">👩‍⚖️</div><h3>Known to the Judges</h3><p>Decades of hearings mean a reputation with the local administrative law judges who decide your case.</p></div>
+      <div class="card reveal"><div class="ico">🤝</div><h3>Personal Service</h3><p>You get a dedicated team that returns your calls and keeps you informed at every stage.</p></div>
+      <div class="card reveal"><div class="ico">🩺</div><h3>Medical Network</h3><p>Established relationships with area providers help us gather the records and opinions that win claims.</p></div>
+      <div class="card reveal"><div class="ico">💵</div><h3>No Win, No Fee</h3><p>Nothing up front. Our fee is a capped percentage of the past-due benefits we recover for you.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 7 · PROCESS  (4 numbered steps)
+     ======================================================================== -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Our Process</p>
+      <h2 class="section-title">A clear path from application to approval.</h2>
+      <p class="lede">Wherever you are in the process — even if you've already been denied — we can step in and take it from here.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Free Consultation</h3><p>Tell us your situation. We review your eligibility and explain your options at no cost.</p></div>
+      <div class="step reveal"><h3>Build the Claim</h3><p>We gather medical records, complete the paperwork, and file your application or appeal on time.</p></div>
+      <div class="step reveal"><h3>Represent You</h3><p>We prepare you for the hearing and advocate on your behalf before the administrative law judge.</p></div>
+      <div class="step reveal"><h3>Secure Benefits</h3><p>When you're approved, we make sure your past-due and ongoing benefits are calculated correctly.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 8 · PROFILE SECTION  (attorney team — full bios on profile.html)
+     ======================================================================== -->
+<section class="team" id="team">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Lawyers &amp; Staff</p>
+      <h2 class="section-title">Meet the attorneys on your side.</h2>
+      <p class="lede">A seasoned team that has devoted their careers to Social Security Disability law.</p>
+    </div>
+    <div class="team-grid">
+
+      <a class="profile-card reveal" href="profile.html#moe-greenberg">
+        <div class="photo"><img src="images/moe-greenberg.jpg" alt="Moe Greenberg"></div>
+        <div class="info"><span class="role">Partner</span><h3>Moe Greenberg</h3><p>Co-founder who has represented disability clients since 1991.</p></div>
+      </a>
+
+      <a class="profile-card reveal" href="profile.html#james-gannon">
+        <div class="photo"><img src="images/james-gannon.jpg" alt="James Gannon"></div>
+        <div class="info"><span class="role">Partner</span><h3>James Gannon</h3><p>Partner guiding claims from application through federal court.</p></div>
+      </a>
+
+      <a class="profile-card reveal" href="profile.html#kevin-heitke">
+        <div class="photo"><img src="images/kevin-heitke.jpg" alt="Kevin Heitke"></div>
+        <div class="info"><span class="role">Hearing Attorney</span><h3>Kevin Heitke</h3><p>Represents clients at hearings before administrative law judges.</p></div>
+      </a>
+
+      <a class="profile-card reveal" href="profile.html#kaylin-pelletier">
+        <div class="photo"><img src="images/kaylin-pelletier.jpg" alt="Kaylin Pelletier"></div>
+        <div class="info"><span class="role">Hearing Attorney</span><h3>Kaylin Pelletier</h3><p>Advocates for claimants at the critical hearing stage.</p></div>
+      </a>
+
+    </div>
+    <div class="center" style="margin-top:2.4rem">
+      <a class="btn btn-teal" href="profile.html">View Full Attorney Profiles →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 9 · TIMELINE  (firm history)
+     ======================================================================== -->
+<section class="timeline">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Our Story</p>
+      <h2 class="section-title">Three and a half decades of advocacy.</h2>
+    </div>
+    <div class="track">
+      <div class="milestone reveal"><div class="dot"></div><div class="yr">1991</div><p>Founded by David Green &amp; Moe Greenberg.</p></div>
+      <div class="milestone reveal"><div class="dot"></div><div class="yr">2000</div><p>Thousands of clients represented across the region.</p></div>
+      <div class="milestone reveal"><div class="dot"></div><div class="yr">2016</div><p>Recognized as a premier Rhode Island disability firm.</p></div>
+      <div class="milestone reveal"><div class="dot"></div><div class="yr">2020</div><p>Expanded commitment to client service and outreach.</p></div>
+      <div class="milestone reveal"><div class="dot"></div><div class="yr">2026</div><p>35 years of practice devoted entirely to disability law.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 10 · TESTIMONIALS
+     ======================================================================== -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Client Testimonials</p>
+      <h2 class="section-title">What our clients say.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"They handled everything and kept me updated the whole way. I finally felt like someone was in my corner."</p><div class="who">— Jason M.</div></div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"Professional, responsive, and genuinely caring. After my denial, they got my claim approved on appeal."</p><div class="who">— Adriene O.</div></div>
+      <div class="quote reveal"><div class="stars">★★★★★</div><p>"I can't thank this team enough. They explained every step and never let a deadline slip."</p><div class="who">— Carla P.</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 11 · CTA BANNER
+     ======================================================================== -->
+<section class="cta-banner">
+  <div class="wrap">
+    <p class="eyebrow" style="color:#5a3d10">No Cost. No Obligation.</p>
+    <h2 class="section-title">Find out if you have a case — for free.</h2>
+    <p>Speak with a Rhode Island Social Security Disability attorney today. There's no fee unless we win benefits for you.</p>
+    <a class="btn btn-teal" href="tel:18443318989">Call (844) 331-8989</a>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 12 · CONTACT  (offices + form)
+     ======================================================================== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="center">
+      <p class="eyebrow">Contact Us</p>
+      <h2 class="section-title">Start your free case review.</h2>
+    </div>
+    <div class="grid" style="margin-top:2.6rem">
+
+      <!-- offices -->
+      <div class="offices reveal">
+        <div class="office">
+          <h3>Providence, RI — Main Office</h3>
+          <div class="row"><b>Address</b><span>365 Eddy Street, Suite 5, Providence, RI 02903</span></div>
+          <div class="row"><b>Phone</b><span><a href="tel:14013318989">(401) 331-8989</a></span></div>
+          <div class="row"><b>Toll-Free</b><span><a href="tel:18443318989">(844) 331-8989</a></span></div>
+          <div class="row"><b>Fax</b><span>(401) 331-6644</span></div>
+        </div>
+        <div class="office">
+          <h3>Fall River, MA</h3>
+          <div class="row"><b>Address</b><span>408 Bedford St., Fall River, MA 02720</span></div>
+          <div class="row"><b>Phone</b><span><a href="tel:14013318989">(401) 331-8989</a></span></div>
+          <div class="row"><b>Fax</b><span>(401) 331-6644</span></div>
+        </div>
+      </div>
+
+      <!-- form -->
+      <form class="reveal" onsubmit="event.preventDefault(); this.reset(); alert('Thanks! This is a demo form — in production it would send to the firm.');">
+        <div><label for="name">Full Name</label><input id="name" name="name" required></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+        <div><label for="msg">How can we help?</label><textarea id="msg" name="msg" rows="4"></textarea></div>
+        <button class="btn btn-gold" type="submit" style="justify-content:center">Request My Free Review</button>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ========================================================================
+     SECTION 13 · FOOTER
+     ======================================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <img src="images/logo.png" alt="Green & Greenberg">
+        <p>Social Security Disability attorneys serving Rhode Island and Massachusetts since 1991. SSDI &amp; SSI is all we do.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="#why">Why Us</a>
+        <a href="#process">Our Process</a>
+        <a href="profile.html">Attorneys</a>
+      </div>
+      <div>
+        <h4>Practice</h4>
+        <a href="#">SSDI Claims</a>
+        <a href="#">SSI Claims</a>
+        <a href="#">Denials &amp; Appeals</a>
+        <a href="#">Federal Court</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:14013318989">(401) 331-8989</a>
+        <a href="tel:18443318989">(844) 331-8989</a>
+        <a href="#contact">365 Eddy St, Providence RI</a>
+        <a href="#contact">408 Bedford St, Fall River MA</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Green &amp; Greenberg. Demo rebuild for portfolio purposes.</span>
+      <span><a href="#">Privacy Policy</a> · <a href="#">Disclaimer</a></span>
+    </div>
+    <p class="disclaimer">This website is a demonstration rebuild and is not affiliated with the live firm. The information provided does not constitute legal advice and does not create an attorney-client relationship.</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
