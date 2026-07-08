@@ -111,8 +111,18 @@ section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
   box-shadow: 0 4px 24px rgba(15,60,62,.28);
 }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: .9rem 0; }
-.brand { display: flex; align-items: center; gap: .8rem; }
-.brand img { height: 40px; width: auto; }
+/* text wordmark logo — crisp at any resolution */
+.brand { display: inline-flex; flex-direction: column; align-items: center; gap: 3px; line-height: 1; text-decoration: none; }
+.brand .brand-name { font-family: "Questrial", var(--sans); font-size: 1.5rem; letter-spacing: .012em; color: #fff; white-space: nowrap; }
+.brand .brand-name .amp { color: #fff; font-weight: 400; margin: 0 .05em; }
+.brand .brand-tag { font-family: "Questrial", var(--sans); font-size: .62rem; letter-spacing: .3em; color: var(--gold-soft); text-transform: none; }
+.brand:hover .brand-name { color: #fff; }
+/* footer variant (dark teal, left aligned) */
+.footer-brand { align-items: flex-start; margin-bottom: 1rem; }
+/* large variant on the branded hero slide */
+.brand-lg { align-items: flex-start; gap: 5px; margin-bottom: 1.3rem; }
+.brand-lg .brand-name { font-size: clamp(1.9rem, 4vw, 2.6rem); }
+.brand-lg .brand-tag { font-size: .78rem; letter-spacing: .34em; }
 .nav { display: flex; align-items: center; gap: 1.6rem; }
 .nav a {
   color: #eaf2f0; font-weight: 600; font-size: .95rem; letter-spacing: .01em;
