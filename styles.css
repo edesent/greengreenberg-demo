@@ -463,6 +463,47 @@ section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
 @media (max-width: 480px) { .chat { right: 14px; bottom: 14px; } .chat-launch { width: 56px; height: 56px; } }
 
 /* =================================================================
+   FREE CONSULTATION PAGE
+   ================================================================= */
+.consult { padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.consult .grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
+.consult-form { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: clamp(1.4rem, 3vw, 2.2rem); box-shadow: var(--shadow-sm); }
+.consult-form h2 { font-size: 1.6rem; margin-bottom: .3rem; }
+.form-intro { color: var(--muted); font-size: .96rem; margin-bottom: 1.4rem; }
+.consult-form label { font-weight: 600; font-size: .9rem; display: block; margin-bottom: .3rem; }
+.consult-form input, .consult-form textarea, .consult-form select {
+  width: 100%; padding: .75rem .9rem; border: 1px solid var(--line); border-radius: 10px;
+  font-family: inherit; font-size: .96rem; background: var(--bg); color: var(--ink);
+}
+.consult-form input:focus, .consult-form textarea:focus, .consult-form select:focus { outline: 2px solid var(--teal-light); border-color: transparent; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: 1.1rem; }
+.form-grid .full { grid-column: 1 / -1; }
+.q-group { margin-bottom: 1.1rem; }
+.q-group .q { display: block; font-weight: 600; font-size: .92rem; margin-bottom: .45rem; color: var(--ink); }
+.radio-row { display: flex; flex-wrap: wrap; gap: .5rem; }
+.radio-row label {
+  display: inline-flex; align-items: center; gap: .45rem; margin: 0; font-weight: 500;
+  border: 1px solid var(--line); border-radius: 999px; padding: .45rem 1rem; cursor: pointer;
+  font-size: .9rem; background: var(--bg); transition: border-color .2s, background .2s;
+}
+.radio-row label:hover { border-color: var(--teal-light); }
+.radio-row input { width: auto; accent-color: var(--teal); margin: 0; }
+.form-fine { font-size: .78rem; color: var(--muted); margin: .9rem 0 0; }
+
+.consult-side { display: grid; gap: 1rem; }
+.side-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.3rem 1.4rem; box-shadow: var(--shadow-sm); }
+.side-card h3 { font-size: 1.1rem; margin-bottom: .7rem; }
+.side-card.highlight { background: var(--teal); color: #fff; }
+.side-card.highlight h3 { color: #fff; }
+.side-card .row { display: flex; gap: .6rem; margin-bottom: .3rem; color: var(--muted); font-size: .92rem; }
+.side-card .row b { color: var(--ink); min-width: 74px; }
+.checklist { list-style: none; padding: 0; margin: 0 0 1rem; }
+.checklist li { position: relative; padding-left: 1.7rem; margin-bottom: .55rem; color: #e7efed; font-size: .95rem; }
+.checklist li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: 700; }
+@media (max-width: 860px) { .consult .grid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
+/* =================================================================
    MORE-TEAM STRIP (bottom of single attorney pages)
    ================================================================= */
 .team-more { background: var(--paper); }

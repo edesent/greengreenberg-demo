@@ -1,19 +1,21 @@
 <!--
   ============================================================================
-  ATTORNEYS INDEX (profile.html)
-  Grid of attorney cards — each links to that lawyer's single profile page.
+  FREE CONSULTATION PAGE (free-consultation.html)
+  Sections: TOP BAR · HEADER · PAGE HERO · FORM + SIDEBAR · CTA · FOOTER · CHAT
   ============================================================================
 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Attorneys &mdash; Green &amp; Greenberg | Social Security Disability</title>
-<meta name="description" content="Meet the Green & Greenberg attorneys — a team devoted exclusively to Social Security Disability (SSDI & SSI) claims in Rhode Island and Massachusetts.">
+<title>Free Consultation &mdash; Green &amp; Greenberg | Social Security Disability</title>
+<meta name="description" content="Request your free, confidential Social Security Disability consultation with Green & Greenberg. No fee unless we win benefits for you.">
 <link rel="icon" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Questrial&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
+
+<!-- TOP BAR -->
 <div class="topbar">
   <div class="wrap">
     <div class="tb-left">
@@ -24,6 +26,8 @@
   </div>
 </div>
 
+
+<!-- HEADER -->
 <header class="site-header">
   <div class="wrap">
     <a class="brand" href="index.html" aria-label="Green & Greenberg, Attorneys at Law">
@@ -34,7 +38,7 @@
       <a href="index.html">Home</a>
       <a href="index.html#why">Why Us</a>
       <a href="index.html#process">Our Process</a>
-      <a href="profile.html" class="active">Attorneys</a>
+      <a href="profile.html">Attorneys</a>
       <a href="index.html#testimonials">Testimonials</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -45,57 +49,126 @@
   </div>
 </header>
 
+
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Attorneys</div>
-    <h1>Lawyers &amp; Staff</h1>
-    <p>Our attorneys have devoted their careers to one field of law: Social Security Disability. Select an attorney to read their full profile.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Free Consultation</div>
+    <h1>Free Consultation</h1>
+    <p>Committed to helping our clients succeed. For more than three decades, we&rsquo;ve guided Rhode Islanders and their neighbors through the Social Security Disability process &mdash; and it always starts with a free, no-obligation conversation.</p>
   </div>
 </section>
 
-<!-- ATTORNEY GRID -->
-<section class="team">
-  <div class="wrap">
-    <div class="team-grid">
-      <a class="profile-card reveal" href="moe-greenberg.html">
-        <div class="photo"><img src="images/moe-greenberg.jpg" alt="Moe Greenberg"></div>
-        <div class="info"><span class="role">Partner &amp; Co-Founder</span><h3>Moe Greenberg</h3><p>Moe Greenberg co-founded the firm in 1991 on a simple belief: people living with a disability deserve an&hellip;</p></div>
-      </a>
 
-      <a class="profile-card reveal" href="james-gannon.html">
-        <div class="photo"><img src="images/james-gannon.jpg" alt="James Gannon"></div>
-        <div class="info"><span class="role">Partner</span><h3>James Gannon</h3><p>James Gannon is a partner at Green &amp; Greenberg who represents disability claimants from their very first&hellip;</p></div>
-      </a>
+<!-- FORM + SIDEBAR -->
+<section class="consult">
+  <div class="wrap grid">
 
-      <a class="profile-card reveal" href="kevin-heitke.html">
-        <div class="photo"><img src="images/kevin-heitke.jpg" alt="Kevin Heitke"></div>
-        <div class="info"><span class="role">Hearing Attorney</span><h3>Kevin Heitke</h3><p>Kevin Heitke represents clients where it matters most &mdash; at the hearing before an administrative law&hellip;</p></div>
-      </a>
+    <!-- consultation form -->
+    <form class="consult-form reveal" onsubmit="event.preventDefault(); this.reset(); alert('Thank you — your consultation request has been received. A member of our team will reach out within one business day.');">
+      <h2>Request Your Free Case Review</h2>
+      <p class="form-intro">Tell us a little about your situation and we&rsquo;ll get back to you quickly. Every consultation is 100% free and confidential.</p>
 
-      <a class="profile-card reveal" href="kaylin-pelletier.html">
-        <div class="photo"><img src="images/kaylin-pelletier.jpg" alt="Kaylin Pelletier"></div>
-        <div class="info"><span class="role">Hearing Attorney</span><h3>Kaylin Pelletier</h3><p>Kaylin Pelletier advocates for claimants at the critical hearing stage, guiding clients through the questions&hellip;</p></div>
-      </a>
+      <div class="q-group">
+        <span class="q">Have you applied for disability?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="applied" value="yes" required> Yes</label>
+          <label><input type="radio" name="applied" value="no"> No</label>
+        </div>
+      </div>
 
-      <a class="profile-card reveal" href="david-green.html">
-        <div class="photo"><img src="images/david-green.jpg" alt="David Green"></div>
-        <div class="info"><span class="role">Retired Partner &amp; Co-Founder</span><h3>David Green</h3><p>David Green co-founded Green &amp; Greenberg in 1991, helping establish one of the first firms in the&hellip;</p></div>
-      </a>
-    </div>
+      <div class="q-group">
+        <span class="q">Have you been denied?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="denied" value="yes"> Yes</label>
+          <label><input type="radio" name="denied" value="no"> No</label>
+        </div>
+      </div>
+
+      <div class="q-group">
+        <span class="q">Are you currently working?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="working" value="yes"> Yes</label>
+          <label><input type="radio" name="working" value="no"> No</label>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div><label for="fname">Full Name *</label><input id="fname" name="fname" required></div>
+        <div><label for="age">Age *</label><input id="age" name="age" type="number" min="0" required></div>
+        <div><label for="email">Email *</label><input id="email" name="email" type="email" required></div>
+        <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div>
+        <div class="full"><label for="about">About your case *</label><textarea id="about" name="about" rows="4" placeholder="Briefly describe your condition and situation" required></textarea></div>
+      </div>
+
+      <div class="q-group">
+        <span class="q">Best time to call?</span>
+        <div class="radio-row">
+          <label><input type="radio" name="besttime" value="morning"> Morning</label>
+          <label><input type="radio" name="besttime" value="afternoon"> Afternoon</label>
+          <label><input type="radio" name="besttime" value="evening"> Evening</label>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="full"><label for="comments">Additional comments</label><textarea id="comments" name="comments" rows="2"></textarea></div>
+      </div>
+
+      <button class="btn btn-gold" type="submit" style="justify-content:center; width:100%">Request My Free Consultation</button>
+      <p class="form-fine">By submitting, you agree to be contacted about your inquiry. This does not create an attorney-client relationship.</p>
+    </form>
+
+    <!-- sidebar -->
+    <aside class="consult-side reveal">
+      <div class="side-card highlight">
+        <h3>What to expect</h3>
+        <ul class="checklist">
+          <li>A free, no-obligation case review</li>
+          <li>Honest answers about your eligibility</li>
+          <li><strong>No fee unless we win</strong> benefits for you</li>
+          <li>A response within one business day</li>
+        </ul>
+        <a class="btn btn-gold" href="tel:18443318989" style="width:100%; justify-content:center; margin-top:.4rem">Call (844) 331-8989</a>
+      </div>
+
+      <div class="side-card">
+        <h3>Providence, RI &mdash; Main Office</h3>
+        <div class="row"><b>Address</b><span>365 Eddy Street, Suite 5, Providence, RI 02903</span></div>
+        <div class="row"><b>Phone</b><span><a href="tel:14013318989">(401) 331-8989</a></span></div>
+        <div class="row"><b>Toll-Free</b><span><a href="tel:18443318989">(844) 331-8989</a></span></div>
+        <div class="row"><b>Fax</b><span>(401) 331-6644</span></div>
+      </div>
+
+      <div class="side-card">
+        <h3>Fall River, MA</h3>
+        <div class="row"><b>Address</b><span>408 Bedford St., Fall River, MA 02720</span></div>
+        <div class="row"><b>Phone</b><span><a href="tel:14013318989">(401) 331-8989</a></span></div>
+        <div class="row"><b>Fax</b><span>(401) 331-6644</span></div>
+      </div>
+
+      <div class="side-card">
+        <h3>Office Hours</h3>
+        <div class="row"><b>Mon–Fri</b><span>9:00 AM – 5:00 PM</span></div>
+        <div class="row"><b>Sat–Sun</b><span>Closed</span></div>
+      </div>
+    </aside>
+
   </div>
 </section>
+
 
 <!-- CTA BANNER -->
 <section class="cta-banner">
   <div class="wrap">
-    <p class="eyebrow" style="color:#5a3d10">Ready to Talk?</p>
-    <h2 class="section-title">Put our team to work on your claim.</h2>
-    <p>Every consultation is free, and you owe no fee unless we win benefits for you.</p>
-    <a class="btn btn-teal" href="index.html#contact">Request a Free Case Review</a>
+    <p class="eyebrow" style="color:#5a3d10">No Cost. No Obligation.</p>
+    <h2 class="section-title">Prefer to talk it through right now?</h2>
+    <p>Our team is ready to answer your questions about SSDI and SSI. There&rsquo;s no fee unless we win benefits for you.</p>
+    <a class="btn btn-teal" href="tel:18443318989">Call (844) 331-8989</a>
   </div>
 </section>
 
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="wrap">
     <div class="grid">
@@ -138,6 +211,7 @@
     <p class="disclaimer">The information on this website is for general informational purposes only and does not constitute legal advice. Contacting the firm does not create an attorney-client relationship.</p>
   </div>
 </footer>
+
 
 <!-- LIVE CHAT WIDGET (logic in script.js, part D) -->
 <div class="chat" id="chat">
