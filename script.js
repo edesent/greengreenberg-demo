@@ -51,6 +51,66 @@
   nav.addEventListener('click', e => { if (e.target.tagName === 'A') nav.classList.remove('open'); });
 })();
 
+/* ---------- D) LIVE CHAT WIDGET --------------------------------------------
+   A self-contained demo chat: opens a panel, echoes the visitor's message,
+   and replies with a canned answer based on simple keyword matching.
+   Swap the replies below (or point sendToBackend() at a real service)
+   to make it production chat.
+   -------------------------------------------------------------------------- */
+(function liveChat() {
+  const root = document.getElementById('chat');
+  if (!root) return;
+  const launch = document.getElementById('chatLaunch');
+  const close = document.getElementById('chatClose');
+  const log = document.getElementById('chatLog');
+  const form = document.getElementById('chatForm');
+  const text = document.getElementById('chatText');
+  const quick = document.getElementById('chatQuick');
+  const badge = root.querySelector('.chat-badge');
+
+  // canned replies keyed by keyword — edit freely
+  const REPLIES = [
+    { k: ['deny', 'denied', 'denial', 'appeal'], a: "I'm sorry to hear that. A denial is very common and can be appealed — our attorneys handle appeals through every level. Call (844) 331-8989 for a free review of your denial." },
+    { k: ['fee', 'cost', 'price', 'pay', 'charge'], a: "There's no fee unless we win. Our fee is a capped percentage of the past-due benefits we recover, approved under federal rules — nothing out of pocket up front." },
+    { k: ['long', 'time', 'how long', 'wait', 'take'], a: "Timelines vary by case and hearing backlog, but we push to keep things moving and meet every deadline. We'll give you a realistic estimate during your free consultation." },
+    { k: ['ssdi', 'ssi', 'disability', 'qualify', 'eligible'], a: "We focus exclusively on SSDI and SSI claims. The quickest way to know if you qualify is a free case review — want us to call you?" },
+    { k: ['hi', 'hello', 'hey'], a: "Hi there! 👋 How can we help with your Social Security Disability claim today?" }
+  ];
+  const FALLBACK = "Thanks for your message! A team member will follow up. For immediate help, call (844) 331-8989 — your consultation is free.";
+
+  function open() { root.classList.add('open'); if (badge) badge.style.display = 'none'; setTimeout(() => text.focus(), 300); }
+  function shut() { root.classList.remove('open'); }
+  launch.addEventListener('click', open);
+  close.addEventListener('click', shut);
+
+  function bubble(msg, who) {
+    const el = document.createElement('div');
+    el.className = 'chat-msg ' + who;
+    el.textContent = msg;
+    log.appendChild(el);
+    log.scrollTop = log.scrollHeight;
+    return el;
+  }
+  function botReply(userMsg) {
+    const t = document.createElement('div');
+    t.className = 'chat-msg bot typing';
+    t.innerHTML = '<span></span><span></span><span></span>';
+    log.appendChild(t); log.scrollTop = log.scrollHeight;
+    const low = userMsg.toLowerCase();
+    const hit = REPLIES.find(r => r.k.some(k => low.includes(k)));
+    setTimeout(() => { t.remove(); bubble(hit ? hit.a : FALLBACK, 'bot'); }, 900);
+  }
+  function send(msg) {
+    if (!msg.trim()) return;
+    bubble(msg, 'user');
+    if (quick) quick.style.display = 'none';
+    botReply(msg);
+  }
+
+  form.addEventListener('submit', e => { e.preventDefault(); send(text.value); text.value = ''; });
+  quick.addEventListener('click', e => { if (e.target.tagName === 'BUTTON') send(e.target.textContent); });
+})();
+
 /* ---------- C) SCROLL REVEAL ------------------------------------------------ */
 (function scrollReveal() {
   const items = document.querySelectorAll('.reveal');
