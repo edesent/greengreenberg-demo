@@ -1,21 +1,27 @@
-# Green & Greenberg — Homepage Demo
+# Green & Greenberg
 
-A demo rebuild of the [Green & Greenberg](https://greengreenberg.com/) homepage,
-built as a clean, editable static site to show off live website editing.
-Not affiliated with the live firm — this is a portfolio / demonstration piece.
+Website for [Green & Greenberg](https://greengreenberg.com/), Attorneys at Law —
+Social Security Disability (SSDI & SSI) attorneys serving Rhode Island and Massachusetts.
+Clean, editable static site.
 
-## What's here
+## Structure
 
-| File | What it is |
+The site is served from **`public/`** (Vercel `outputDirectory: "public"`).
+
+| Path | What it is |
 |------|------------|
-| `index.html` | Homepage — 13 clearly-labeled `SECTION` blocks (search `SECTION:`) |
-| `profile.html` | Attorney page — one labeled `PROFILE:` block per attorney |
-| `styles.css` | All styling, brand palette documented at the top |
-| `script.js` | Three small pieces: hero slider, mobile nav, scroll reveal |
-| `images/` | Real logo, favicon, hero, and attorney photos |
+| `public/index.html` | Homepage — clearly-labeled `SECTION` blocks (search `SECTION:`) |
+| `public/profile.html` | Attorneys index — cards linking to each lawyer |
+| `public/<lawyer>.html` | One page per attorney (e.g. `moe-greenberg.html`) |
+| `public/free-consultation.html` | Free consultation intake form |
+| `public/styles.css` | All styling, brand palette documented at the top |
+| `public/script.js` | Hero slider, mobile nav, scroll reveal, live chat, accordion |
+| `public/images/` | Logo, favicon, hero, slider, and attorney photos |
+| `AGENTS.md` | Conventions for editing (read before making changes) |
 
-Every section of the site is wrapped in a labeled HTML comment so any piece is
-easy to find and edit — e.g. `SECTION 3 · HERO SLIDER`, `PROFILE: Moe Greenberg`.
+## Images
+
+All images live in **`public/images/`** and are referenced as `images/<name>` (served at `/images/<name>`).
 
 ## Brand palette
 
@@ -26,12 +32,12 @@ easy to find and edit — e.g. `SECTION 3 · HERO SLIDER`, `PROFILE: Moe Greenbe
 
 ## Run locally
 
-It's plain HTML/CSS/JS — no build step. Just open `index.html`, or:
+Plain HTML/CSS/JS — no build step:
 
 ```bash
-npx serve .
+cd public && npx serve .
 ```
 
 ## Deploy
 
-Deploys to Vercel as a static site with zero configuration.
+Auto-deploys to Vercel on every push to `main`.
